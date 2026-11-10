@@ -1,0 +1,34 @@
+/**
+ *******************************************************************************
+ * @file      :ins_imu.cpp
+ * @brief     :
+ * @history   :
+ *  Version     Date            Author          Note
+ *  V0.9.0      yyyy-mm-dd      <author>        1. <note>
+ *******************************************************************************
+ * @attention :
+ *******************************************************************************
+ *  Copyright (c) 2024 Hello World Team, Zhejiang University.
+ *  All Rights Reserved.
+ *******************************************************************************
+ */
+
+#include "ins_imu.hpp"
+#include "imu.hpp"
+
+hello_world::imu::Imu *GetImu() {
+  /* TODO【新人任务】:
+   * 返回本板 IMU 单例。
+   *
+   * 你要做：
+   *   1. 静态定义一个 Imu 对象（类由你在 inc/imu.hpp 补全：BMI088 原始读取 +
+   *      Mahony 姿态 + 开机零漂）。
+   *   2. 返回其地址。
+   *
+   * 约束 / 提示：
+   *   - Imu 类的定义见 inc/imu.hpp 的 TODO；本文件只负责实例化并返回地址。
+   *   - 姿态角 / 零漂未就绪前，上层状态机应保持在 Dead / Resurrection（见 RobotModules TODO）。
+   */
+  static hello_world::imu::Imu imu;
+  return &imu;
+}
